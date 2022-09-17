@@ -23,6 +23,11 @@ function App() {
       min-height: 100%;
       padding: 40px 80px;
       transition: background 0.2s ease-out, color 0.2s ease-out;
+      border: solid 1px black;
+      height: auto;
+      position:absolute;
+      bottom:0px;
+      
     `}
   >
     <Nav />
