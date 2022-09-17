@@ -8,14 +8,33 @@ import { DarkModeProvider } from './context/DarkModeContext'
 import { DarkModeContext } from './context/DarkModeContext'
 import { useContext } from 'react'
 
-import Shell from './Shell'
-/* created shell to make all App components  be part of DarkModeProvider Context */
+import About from './About'
+import Home from './Home'
+import Nav from './Nav'
 
 function App() {
+  const { darkMode } = useContext(DarkModeContext)
   return (
-    <DarkModeProvider>
-      <Shell></Shell>
-    </DarkModeProvider>
+    <div
+    className={darkMode ? `home-dark` : `home-light`}
+    css={css`
+      box-sizing: border-box;
+      color: #34374c;
+      min-height: 100%;
+      padding: 40px 80px;
+      transition: background 0.2s ease-out, color 0.2s ease-out;
+    `}
+  >
+    <Nav />
+    <Switch>
+      <Route path="/about">
+        <About />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </div>
   )
 }
 
