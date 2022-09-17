@@ -24,7 +24,7 @@ const Modeswitch = () => {
     >
       <FontAwesomeIcon
         onClick={handleClick}
-        color={darkMode ? 'WHITE' : '34374c'}
+        color={darkMode ? 'WHITE' : '#ffbf2f'}
         size="lg"
         icon={darkMode ? faSun : faMoon}
       />
